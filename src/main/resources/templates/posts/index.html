@@ -7,7 +7,7 @@
 <body>
 <main>
     <div th:each="posts : ${posts}">
-        <h1 th:text="${posts.title}"></h1>
+        <a th:href="@{/posts/{id} (id = ${posts.id})}"><h1 th:text="${posts.title}"></h1></a>
         <p th:text="${posts.body}"></p>
     </div>
 </main>
