@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+</head>
+<body>
+    <h1>Log In</h1>
+    <div th:if="${error}">
+        <div th:if="${error == 'invalid-credentials'}">
+            <p>Invalid credentials</p>
+        </div>
+        <div th:if="${error == 'user-not-found'}">
+            <p>User not found</p>
+        </div>
+    </div>
+    <form th:action="@{/login}" method="POST">
+        <label for="username">Username</label>
+        <input id="username" th:field="*{username}" />
+        <label for="password">Password</label>
+        <input id="password" type="password" th:field="*{password}" />
+        <input value="Log me in!" type="submit" />
+    </form>
+</body>
+</html>

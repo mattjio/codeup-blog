@@ -66,5 +66,10 @@ public class User {
         this.password = password;
     }
 
-
+    public User(User copy) {
+        id = copy.id;
+        username = copy.username;
+        email = copy.email;
+        password = copy.password;
+    }
 }
